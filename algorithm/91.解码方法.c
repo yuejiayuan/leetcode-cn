@@ -18,11 +18,10 @@ int numDecodings(char * s) {
     for (int i = 1; i < strlen(s); ++i) {
         if (s[i] == '0') {  //  只能s[i-1]s[i]联合解析 
             if (s[i-1] == '1' || s[i-1] == '2') {
-                if (i - 2 >= 0) {
+                if (i - 2 >= 0) 
                     dp[i] += dp[i-2];
-                } else {
+                else 
                     dp[i] = 1;
-                }
             } else {
                dp[i] = 0; 
             }
@@ -35,7 +34,7 @@ int numDecodings(char * s) {
                if (i - 2 >= 0)
                     dp[i] += dp[i-2];
                else
-                    dp[i] = (dp[i-1] + 1);
+                    dp[i] = dp[i-1] + 1;
             }
         }
     }
