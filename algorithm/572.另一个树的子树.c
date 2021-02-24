@@ -18,7 +18,7 @@
 bool isSameTree(struct TreeNode* s, struct TreeNode* t);
 bool dfs(struct TreeNode* s, struct TreeNode* t);
 
-bool isSubtree(struct TreeNode* s, struct TreeNode* t){
+bool isSubtree(struct TreeNode* s, struct TreeNode* t) {
   	return dfs(s, t);
 }
 
@@ -35,8 +35,9 @@ bool isSameTree(struct TreeNode* s, struct TreeNode* t) {
 }
 
 bool dfs(struct TreeNode* s, struct TreeNode* t) {
-    if (!s) return false;
-    
+    if (!s || !t) {
+        return false;
+    }
   	return isSameTree(s, t) || dfs(s->left, t) || dfs(s->right, t) ;
 }
 // @lc code=end
